@@ -3,6 +3,7 @@
 #include <stdlib.h>
 int main() {
   int num = 1;
-  printf("%d", num);
+  printf("%d\n", num);
+  printf("hello world ");
   return 0;
 }
