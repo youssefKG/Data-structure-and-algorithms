@@ -1,9 +1,8 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
-struct list {
+struct list   {
   int val; 
   struct list *next; 
 }; 
