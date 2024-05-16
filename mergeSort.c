@@ -71,3 +71,5 @@ int main() {
   displayArr(arr, length);
   return 0;
 }
+void swaptwo(int *n1 , int *n2){
+}
