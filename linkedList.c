@@ -14,6 +14,8 @@ List *insertAtTheBegennig(List *head, int val);
 List *insertAtEnd(List *head , int val);
 List *insertInBetween(List *head , int val , int position);
 List *deleteFromTheEnd(List *head);
+List *deleteTheHeadList(List *head);
+List *deleteBetween(List *head, int position);
 bool searchNode(List *head, int element);
 void printList(List *head);
 
@@ -33,8 +35,10 @@ int main(){
   // printf the list
   printf("before: "); 
   printList(head);
+  head = deleteBetween(head, 3); 
   // delete from the end of list 
-  head = deleteFromTheEnd(head);
+  // head = deleteFromTheEnd(head);
+  // head = deleteTheHeadList(head);
   // printf the list
   printf("after: ");
   printList(head);
@@ -151,6 +155,31 @@ List *deleteFromTheEnd(List *head){
   free(current);
   return head;
 
+}
+
+List *deleteTheHeadList(List *head){
+  if(head == NULL) return head ; 
+
+  List *temp= head;
+  free(temp); 
+
+  return head->next;
+}
+
+List *deleteBetween(List *head, int position){
+  int currentPosition = 1; 
+  if(head == NULL) return head; 
+
+  List *prevNode = head;
+
+  while(currentPosition != position -1 ){
+      prevNode = prevNode->next; 
+    currentPosition++; 
+  }
+
+  prevNode->next= prevNode->next->next; 
+
+  return head; 
 }
 
 void printList(List *head){
